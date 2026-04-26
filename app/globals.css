@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-pink: #FFD6E0;
+  --color-brand-lilac: #E8D5F5;
+  --color-brand-mint: #C8F0E0;
+  --color-brand-peach: #FFE5CC;
+  --color-brand-sky: #D0EEFF;
+  --color-brand-cream: #FFF9F0;
+  --color-brand-text: #4A3F4A;
+  --color-brand-muted: #9B8A9B;
+
+  /* Accent colors */
+  --color-accent-main: #FF85A1;
+  --color-accent-hover: #FF6B8E;
+  --color-accent-dark: #C4507A;
+
+  /* Fonts */
+  --font-sans: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for scroll snap galleries */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
