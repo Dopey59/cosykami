@@ -4,6 +4,7 @@ import { shopifyFetch } from '@/lib/shopify/client';
 import { COLLECTION_QUERY, ALL_COLLECTIONS_QUERY } from '@/lib/shopify/queries';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import type { ShopifyCollection } from '@/lib/shopify/types';
 
 export const revalidate = 60;
@@ -72,6 +73,7 @@ export default async function CollectionPage({ params }: Props) {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-8">
+        <Breadcrumb items={[{ label: collection.title }]} />
         {/* En-tête collection */}
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-brand-text md:text-3xl">

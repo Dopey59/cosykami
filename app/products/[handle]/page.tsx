@@ -6,6 +6,7 @@ import { ProductImageGallery } from '@/components/product/ProductImageGallery';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { ProductJsonLd } from '@/components/seo/ProductJsonLd';
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import type { ShopifyProduct } from '@/lib/shopify/types';
 
 export const revalidate = 60;
@@ -85,6 +86,12 @@ export default async function ProductPage({ params }: Props) {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-6 md:py-10">
+        <Breadcrumb
+          items={[
+            { label: 'Stickers cosy', href: '/collections/stickers-cosy' },
+            { label: product.title },
+          ]}
+        />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Galerie */}
           <ProductImageGallery images={images} title={product.title} />

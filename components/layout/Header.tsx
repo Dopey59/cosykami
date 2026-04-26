@@ -29,7 +29,7 @@ export function Header() {
     <>
       <header
         className={`sticky top-0 z-40 transition-shadow duration-300 ${
-          scrolled ? 'bg-brand-cream/95 backdrop-blur-sm shadow-sm' : 'bg-brand-cream'
+          scrolled ? 'bg-blur-[90px] bg-white/90 shadow-sm' : 'bg-blur-[90px] bg-white/90'
         }`}
       >
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">

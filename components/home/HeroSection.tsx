@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { NumberTicker } from '@/components/ui/NumberTicker';
+import Image from 'next/image';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -20,12 +21,27 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-pink via-brand-lilac to-brand-sky px-4 py-20 text-center md:py-32">
+    <section className="relative overflow-hidden px-4 py-20 text-center md:py-32">
+      
+      {/* BACKGROUND IMAGE */}
+      <Image
+        src="https://images.unsplash.com/vector-1757199990469-b6e3c43099e7?q=80&w=1548&auto=format&fit=crop"
+        alt="Background"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* OVERLAY (optionnel pour lisibilité) */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+
+      {/* DECOR */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-brand-pink/40 blur-3xl" />
         <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-brand-lilac/50 blur-3xl" />
       </div>
 
+      {/* CONTENT */}
       <div className="relative mx-auto max-w-2xl">
         <motion.p
           custom={0}
@@ -45,9 +61,8 @@ export function HeroSection() {
           animate="visible"
           className="font-display text-4xl font-bold leading-tight text-brand-text md:text-6xl"
         >
-          Arrête de rêver
+          Plongez dans un univers coloré
           <br />
-          <span className="text-accent-main">de belles pages.</span>
         </motion.h1>
 
         <motion.p
@@ -55,9 +70,9 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-base text-brand-muted md:text-lg"
+          className="mt-5 text-base text-black md:text-lg"
         >
-          Des stickers cosy kawaii pour donner vie à ton scrapbooking et rendre chaque page unique.
+          Des stickers cosy et colorés pour embellir vos créations et exprimer votre personnalité.
         </motion.p>
 
         <motion.div

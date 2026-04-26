@@ -1,24 +1,26 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google';
+import { DynaPuff, DM_Sans } from 'next/font/google';
+
 import { Toaster } from 'react-hot-toast';
 import { CartProvider } from '@/providers/CartProvider';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import './globals.css';
+import { cn } from "@/lib/utils";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const dynaPuff = DynaPuff({
   subsets: ['latin'],
-  variable: '--font-jakarta',
+  variable: '--font-dynapuff',
+  weight: '700',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
 });
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm',
-  display: 'swap',
   weight: ['400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${plusJakartaSans.variable} ${dmSans.variable} antialiased`}>
-      <body className="font-sans antialiased">
+    <html lang="fr" className={cn(dynaPuff.variable, dmSans.variable)}>
+      <body className="antialiased">
         <ScrollProgress />
         <CartProvider>
           <Header />
@@ -57,14 +59,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           position="bottom-center"
           toastOptions={{
             style: {
-              background: '#FFF9F0',
-              color: '#4A3F4A',
-              border: '1px solid #FFD6E0',
+              background: '#FFF8F4',
+              color: '#1A1A1A',
+              border: '1px solid #FF85A1',
               borderRadius: '16px',
               fontFamily: 'var(--font-sans)',
             },
             success: {
-              iconTheme: { primary: '#FF85A1', secondary: '#FFF9F0' },
+              iconTheme: { primary: '#FF85A1', secondary: '#FFF0E6' },
             },
           }}
         />
