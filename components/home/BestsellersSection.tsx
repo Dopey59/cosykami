@@ -63,7 +63,7 @@ export function BestsellersSection({ products }: Props) {
 
         <div className="mt-10 text-center">
           <Link
-            href="/collections/stickers-cosy"
+            href="/collections/coloriage-cosy"
             className="inline-flex min-h-[44px] items-center rounded-full border border-brand-pink px-6 py-2 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-pink/20"
           >
             Toute la collection →

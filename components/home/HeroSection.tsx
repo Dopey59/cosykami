@@ -15,7 +15,7 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: 2347, suffix: '', label: 'commandes' },
+  { value: 5346, suffix: '+', label: 'commandes' },
   { value: 48, suffix: 'h', label: 'expédition' },
 ];
 
@@ -25,15 +25,15 @@ export function HeroSection() {
       
       {/* BACKGROUND IMAGE */}
       <Image
-        src="https://images.unsplash.com/vector-1757199990469-b6e3c43099e7?q=80&w=1548&auto=format&fit=crop"
+        src="https://images.unsplash.com/vector-1756187760809-bb057d260500?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Background"
         fill
         priority
-        className="object-cover"
+        className="object-cover "
       />
 
       {/* OVERLAY (optionnel pour lisibilité) */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
 
       {/* DECOR */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -59,7 +59,7 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="font-display text-4xl font-bold leading-tight text-brand-text md:text-6xl"
+          className="font-display text-4xl font-bold leading-tight text-white md:text-6xl"
         >
           Plongez dans un univers coloré
           <br />
@@ -70,7 +70,7 @@ export function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-base text-black md:text-lg"
+          className="mt-5 text-base text-white md:text-lg"
         >
           Des stickers cosy et colorés pour embellir vos créations et exprimer votre personnalité.
         </motion.p>
@@ -90,7 +90,7 @@ export function HeroSection() {
           </Link>
           <Link
             href="/collections/nouveautes"
-            className="inline-flex min-h-[52px] items-center rounded-full border border-brand-pink bg-white/70 px-8 py-3 font-semibold text-brand-text backdrop-blur-sm transition-colors hover:bg-brand-pink/30"
+            className="inline-flex min-h-[52px] items-center rounded-full border border-brand-pink bg-white/70 px-8 py-3 font-semibold text-black backdrop-blur-sm transition-colors hover:bg-brand-pink/30"
           >
             Voir les nouveautés
           </Link>
@@ -105,10 +105,10 @@ export function HeroSection() {
         >
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-display text-2xl font-bold text-brand-text md:text-3xl">
+              <p className="font-display text-2xl font-bold text-white md:text-3xl">
                 <NumberTicker value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-0.5 text-xs text-brand-muted">{s.label}</p>
+              <p className="mt-0.5 text-xs text-white">{s.label}</p>
             </div>
           ))}
 
@@ -120,7 +120,7 @@ export function HeroSection() {
                 </svg>
               ))}
             </div>
-            <p className="mt-0.5 text-xs text-brand-muted">4.9 / 5 · 247 avis</p>
+            <p className="mt-0.5 text-xs text-white">4.9 / 5 · 247 avis</p>
           </div>
         </motion.div>
       </div>

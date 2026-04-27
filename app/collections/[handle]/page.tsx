@@ -72,12 +72,12 @@ export default async function CollectionPage({ params }: Props) {
         ]}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-8 h-screen ">
         <Breadcrumb items={[{ label: collection.title }]} />
         {/* En-tête collection */}
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-brand-text md:text-3xl">
-            {collection.title} — Stickers Cosy Kawaii
+            {collection.title} — Stickers Cosy mini scènes
           </h1>
           {collection.description && (
             <p className="mt-2 text-sm text-brand-muted">{collection.description}</p>

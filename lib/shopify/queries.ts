@@ -20,6 +20,8 @@ export const COLLECTION_QUERY = `
             id
             title
             handle
+            description
+            descriptionHtml
             availableForSale
             priceRange {
               minVariantPrice {

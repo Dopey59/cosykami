@@ -15,7 +15,7 @@ export function formatPrice(
   currencyCode?: string
 ) {
   let amount = '0';
-  let code = currencyCode || 'JPY'; // défaut Japon
+  let code = currencyCode || 'EUR';
 
   if (typeof priceInput === 'object' && priceInput !== null) {
     amount = priceInput.amount;
@@ -26,11 +26,10 @@ export function formatPrice(
 
   const price = parseFloat(amount);
 
-  // Utiliser Intl.NumberFormat en forçant Japon pour avoir des formats propres
-  return new Intl.NumberFormat('ja-JP', {
+  return new Intl.NumberFormat('fr-FR', {
     style: 'currency',
     currency: code,
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(price);
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { shopifyFetch } from '@/lib/shopify/client';
-import { FEATURED_PRODUCTS_QUERY } from '@/lib/shopify/queries';
+import { FEATURED_PRODUCTS_QUERY, COLLECTION_QUERY } from '@/lib/shopify/queries';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustBar } from '@/components/home/TrustBar';
 import { HowItWorksSection } from '@/components/home/HowItWorksSection';
@@ -8,6 +8,7 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { FinalCTASection } from '@/components/home/FinalCTASection';
 import { VelocitySection } from '@/components/home/VelocitySection';
 import { BestsellersSection } from '@/components/home/BestsellersSection';
+import { ColoriagiSection } from '@/components/home/CosyStickers';
 import type { ShopifyProduct } from '@/lib/shopify/types';
 
 export const metadata: Metadata = {
@@ -27,8 +28,18 @@ async function getFeaturedProducts(): Promise<ShopifyProduct[]> {
   return data.products.edges.map((e) => e.node);
 }
 
+async function getColoriagiProducts(): Promise<ShopifyProduct[]> {
+  const data = await shopifyFetch<{ collection: { products: { edges: { node: ShopifyProduct }[] } } }>({
+    query: COLLECTION_QUERY,
+    variables: { handle: 'stickers-cosy', first: 12 },
+    revalidate: 60,
+  });
+  return data.collection?.products?.edges?.map((e) => e.node) ?? [];
+}
+
 export default async function HomePage() {
   const products = await getFeaturedProducts();
+  const coloriagiProducts = await getColoriagiProducts();
 
   const websiteJsonLd = {
     '@context': 'https://schema.org',
@@ -55,6 +66,8 @@ export default async function HomePage() {
         <VelocitySection />
       </div>
       <HowItWorksSection />
+
+      <ColoriagiSection products={coloriagiProducts} />
 
       {/* Badges réassurance statiques */}
       <section className="mx-auto max-w-7xl px-4 py-14">
