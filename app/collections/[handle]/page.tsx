@@ -72,7 +72,7 @@ export default async function CollectionPage({ params }: Props) {
         ]}
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-8 h-screen ">
+      <div className="mx-auto max-w-7xl px-4 py-8">
         <Breadcrumb items={[{ label: collection.title }]} />
         {/* En-tête collection */}
         <header className="mb-8">
