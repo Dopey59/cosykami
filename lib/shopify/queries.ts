@@ -190,7 +190,13 @@ export const PRODUCT_RECOMMENDATIONS_QUERY = `
           currencyCode
         }
       }
-      images(first: 1) {
+      compareAtPriceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      images(first: 2) {
         edges {
           node {
             url

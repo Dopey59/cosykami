@@ -25,9 +25,10 @@ export function Footer() {
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand-muted">Aide</p>
             <ul className="space-y-2 text-sm text-brand-text">
+              <li><Link href="/a-propos" className="hover:text-accent-main">À propos</Link></li>
               <li><Link href="/faq" className="hover:text-accent-main">FAQ</Link></li>
               <li><Link href="/livraison" className="hover:text-accent-main">Livraison</Link></li>
-              <li><Link href="/retours" className="hover:text-accent-main">Retours</Link></li>
+              <li><Link href="/retours-remboursements" className="hover:text-accent-main">Retours</Link></li>
               <li><Link href="/contact" className="hover:text-accent-main">Contact</Link></li>
             </ul>
           </div>
@@ -37,7 +38,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-brand-text">
               <li><Link href="/mentions-legales" className="hover:text-accent-main">Mentions légales</Link></li>
               <li><Link href="/cgv" className="hover:text-accent-main">CGV</Link></li>
-              <li><Link href="/confidentialite" className="hover:text-accent-main">Confidentialité</Link></li>
+              <li><Link href="/politique-confidentialite" className="hover:text-accent-main">Confidentialité</Link></li>
             </ul>
           </div>
         </div>

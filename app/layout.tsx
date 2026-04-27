@@ -5,7 +5,9 @@ import { Toaster } from 'react-hot-toast';
 import { CartProvider } from '@/providers/CartProvider';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { NewsletterBanner } from '@/components/layout/NewsletterBanner';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
+import { ImageProtection } from '@/components/ImageProtection';
 import './globals.css';
 import { cn } from "@/lib/utils";
 
@@ -48,11 +50,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={cn(dynaPuff.variable, dmSans.variable)}>
-      <body className="antialiased">
+      <body className="flex min-h-screen flex-col antialiased">
         <ScrollProgress />
+        <ImageProtection />
         <CartProvider>
           <Header />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
+          <NewsletterBanner />
           <Footer />
         </CartProvider>
         <Toaster

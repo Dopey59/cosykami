@@ -25,7 +25,7 @@ export function HeroSection() {
       
       {/* BACKGROUND IMAGE */}
       <Image
-        src="https://images.unsplash.com/vector-1756187760809-bb057d260500?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/vector-1774669704718-c763552377de?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Background"
         fill
         priority

@@ -8,13 +8,29 @@ export function NewsletterSignup() {
   const [status, setStatus] = useState<Status>('idle');
   const [email, setEmail] = useState('');
 
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus('loading');
-    // TODO: brancher Klaviyo / Mailchimp / Shopify customer
-    // await fetch('/api/newsletter', { method: 'POST', body: JSON.stringify({ email }) });
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus('success');
+    setErrorMsg(null);
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        setErrorMsg(data.error ?? 'Une erreur est survenue, réessaie.');
+        setStatus('error');
+        return;
+      }
+      setStatus('success');
+    } catch {
+      setErrorMsg('Une erreur est survenue, réessaie.');
+      setStatus('error');
+    }
   }
 
   if (status === 'success') {
@@ -47,7 +63,7 @@ export function NewsletterSignup() {
         {status === 'loading' ? '…' : "Je m'inscris"}
       </button>
       {status === 'error' && (
-        <p className="w-full text-xs text-red-500">Une erreur est survenue, réessaie.</p>
+        <p className="w-full text-xs text-red-500">{errorMsg ?? 'Une erreur est survenue, réessaie.'}</p>
       )}
     </form>
   );

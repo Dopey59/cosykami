@@ -19,14 +19,12 @@ export default function MentionsLegalesPage() {
         <section>
           <h2>Éditeur du site</h2>
           <p>
-            Le site <strong className="text-brand-text">cosykami.fr</strong> est édité par :<br />
+            Le site <strong className="text-brand-text">cosykami.com</strong> est édité par :<br />
             <strong className="text-brand-text">Cosykami</strong><br />
-            Micro-entreprise — SIRET : <strong className="text-brand-text">XXX XXX XXX 00000</strong> {/* à compléter */}<br />
-            Adresse : {/* à compléter */}<br />
+            Micro-entreprise représentée par John Doe<br />
+            7 rue du Pont Neuf, 59800 Lille — France<br />
+            SIRET : <em>en cours d'immatriculation</em><br />
             Email : <a href="mailto:cosykami@gmail.com">cosykami@gmail.com</a>
-          </p>
-          <p className="text-xs text-brand-muted/60">
-            {/* Remplace les champs XXX par tes vraies informations légales */}
           </p>
         </section>
 
