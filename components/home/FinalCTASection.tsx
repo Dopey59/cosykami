@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { SlideUpByWord } from '@/registry/magicui/slide-up-by-word';
+import { SparklesText } from "@/components/ui/sparkles-text"
 
 const FLOATING_PETALS = [
   { left: '3%',  top: '22%', size: 20, rot: 30,  color: '#FFB899', dur: 4.1, delay: 0 },
@@ -146,7 +147,7 @@ export function FinalCTASection() {
           </motion.p>
 
           <h2 className="font-display text-3xl font-bold leading-snug text-brand-text md:text-4xl">
-            <SlideUpByWord text="Tes prochaines pages préférées commencent ici." delay={0.35} />
+            <SparklesText>D'autres produits arrivent bientôt !</SparklesText>
           </h2>
 
           <motion.p
@@ -171,7 +172,7 @@ export function FinalCTASection() {
               className="inline-block"
             >
               <Link
-                href="/collections/stickers-cosy"
+                href="/collections/tous-les-produits"
                 className="inline-flex min-h-[52px] items-center rounded-full bg-accent-main px-10 py-3 font-semibold text-white shadow-[0_4px_28px_rgba(255,133,161,0.45)] transition-colors hover:bg-accent-hover"
               >
                 Découvrir la collection

@@ -9,9 +9,9 @@ import { fadeIn, slideInBottom } from '@/lib/animations';
 
 const NAV_LINKS = [
   { href: '/collections/stickers-cosy', label: 'Stickers cosy' },
-  { href: '/collections/journaling', label: 'Journaling' },
-  { href: '/collections/scrapbooking', label: 'Scrapbooking' },
-  { href: '/collections/nouveautes', label: 'Nouveautés' },
+  { href: '/collections/coloriage-cosy', label: 'Coloriage cosy' },
+  { href: '/a-propos', label: 'À propos' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {

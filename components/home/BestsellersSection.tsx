@@ -51,7 +51,7 @@ export function BestsellersSection({ products }: Props) {
             <SakuraLabel />Coup de cœur
           </p>
           <h2 className="font-display text-4xl text-brand-text md:text-5xl">
-            <SlideUpByWord text="Les plus populaires" />
+            <SlideUpByWord text="Tous nos produits" />
           </h2>
         </div>
 
@@ -63,7 +63,7 @@ export function BestsellersSection({ products }: Props) {
 
         <div className="mt-10 text-center">
           <Link
-            href="/collections/stickers-cosy"
+            href="/collections/tous-les-produits"
             className="inline-flex min-h-[44px] items-center rounded-full border border-brand-pink px-6 py-2 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-pink/20"
           >
             Toute la collection →

@@ -77,7 +77,7 @@ export default async function CollectionPage({ params }: Props) {
         {/* En-tête collection */}
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-brand-text md:text-3xl">
-            {collection.title} — Stickers Cosy mini scènes
+            {collection.title} — Activités créatives & Relaxantes
           </h1>
           {collection.description && (
             <p className="mt-2 text-sm text-brand-muted">{collection.description}</p>
