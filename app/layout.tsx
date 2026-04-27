@@ -24,7 +24,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cosykami.com'),
   title: {
     default: 'Cosykami — Stickers & Scrapbook Cosy Kawaii',
     template: '%s | Cosykami',
