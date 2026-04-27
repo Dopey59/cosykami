@@ -104,15 +104,12 @@ export default function AProposPage() {
               className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand-border/40 bg-brand-cream/40"
             >
               <Image
-                src={photo.src} 
+                src={photo.src}
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition duration-500 group-hover:scale-[1.03]"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-xs font-semibold text-white">
-                {photo.caption}
-              </figcaption>
             </figure>
           ))}
         </div>
