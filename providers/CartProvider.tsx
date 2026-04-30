@@ -22,6 +22,15 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+// Shopify returns the checkoutUrl with the store's primary domain (cosykami.com),
+// but that domain is served by Next.js. Force the URL to the myshopify.com domain
+// so the browser lands on Shopify's actual checkout page.
+function toShopifyCheckout(url: string): string {
+  const shopDomain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
+  if (!shopDomain) return url;
+  return url.replace(/^https?:\/\/[^/]+/, `https://${shopDomain}`);
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartId, setCartId] = useState<string | null>(null);
   const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
@@ -46,7 +55,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           });
           const cart = data.cartCreate.cart;
           setCartId(cart.id);
-          setCheckoutUrl(cart.checkoutUrl);
+          setCheckoutUrl(toShopifyCheckout(cart.checkoutUrl));
           setLines(cart.lines.edges.map((e) => e.node));
           setTotalQuantity(cart.totalQuantity);
           setTotalAmount(cart.cost.totalAmount.amount);
